@@ -1,18 +1,18 @@
 /*
- *hichat v0.4.2
+ *The Fifth Block v0.4.2
  *Wayou Mar 28,2014
  *MIT license
- *view on GitHub:https://github.com/wayou/HiChat
- *see it in action:http://hichat.herokuapp.com/
+ *view on GitHub:https://github.com/21beckem/The-Fifth-Block/
+ *see it in action:https://the-fifth-block.herokuapp.com/
  */
 window.onload = function() {
-    var hichat = new HiChat();
-    hichat.init();
+    var theFifthBlock = new theFifthBlock();
+    theFifthBlock.init();
 };
-var HiChat = function() {
+var theFifthBlock = function() {
     this.socket = null;
 };
-HiChat.prototype = {
+theFifthBlock.prototype = {
     init: function() {
         var that = this;
         this.socket = io.connect();
@@ -25,7 +25,7 @@ HiChat.prototype = {
             document.getElementById('info').textContent = '!nickname is taken, choose another pls';
         });
         this.socket.on('loginSuccess', function() {
-            document.title = 'hichat | ' + document.getElementById('nicknameInput').value;
+            document.title = 'The5Block | ' + document.getElementById('nicknameInput').value;
             document.getElementById('loginWrapper').style.display = 'none';
             document.getElementById('messageInput').focus();
         });
