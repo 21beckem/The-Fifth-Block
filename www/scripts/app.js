@@ -6,13 +6,13 @@
  *see it in action:https://the-fifth-block.herokuapp.com/
  */
 window.onload = function() {
-    var theFifthBlock = new theFifthBlock();
-    theFifthBlock.init();
+    var hichat = new hichat();
+    hichat.init();
 };
-var theFifthBlock = function() {
+var hichat = function() {
     this.socket = null;
 };
-theFifthBlock.prototype = {
+hichat.prototype = {
     init: function() {
         var that = this;
         this.socket = io.connect();
