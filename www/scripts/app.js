@@ -1,5 +1,5 @@
 var input = document.getElementById('messageInput');
 var that = this;
-if (input.value != "") {
-    console.log('typing');
+while (true) {
+    console.log(input.value);
 }
