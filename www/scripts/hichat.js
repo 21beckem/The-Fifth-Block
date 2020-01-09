@@ -8,9 +8,9 @@
 function maybeTyping() {
     input = document.getElementById('messageInput');
     if (input.value != "") {
-        console.log('true');
+        socket.emit('starttyping');
     } else {
-        console.log('false');
+        socket.emit('stoptyping');
     }
 }
 window.onload = function() {

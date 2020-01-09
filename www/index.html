@@ -29,9 +29,8 @@
                         <input id="sendImage" type="file" value="image"/>
                     </label>
                     <input id="clearBtn" type="button" value="clear" title="clear screen" />
-                    Send Typing data?<input type="checkbox" id="sendTypingData">
                 </div>
-                <textarea onchange="maybeTyping()" id="messageInput" placeHolder="enter to send"></textarea>
+                <textarea onchange="maybeTyping()" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" id="messageInput" placeHolder="enter to send"></textarea>
                 <input id="sendBtn" type="button" value="SEND">
                 <div id="emojiWrapper">
                 </div>
