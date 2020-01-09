@@ -36,7 +36,6 @@ io.sockets.on('connection', function(socket) {
     //get typing start
     socket.on('starttyping', function() {
         socket.broadcast.emit('typing', socket.nickname, true);
-        socket.broadcast.emit('newMsg', 'system', 'typing!', color);
     });
     //get typing stop
     socket.on('stoptyping', function() {

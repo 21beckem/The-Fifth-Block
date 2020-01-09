@@ -51,6 +51,7 @@ HiChat.prototype = {
         });
         // typing or not
         this.socket.on('typing', function(user, yesOrNo) {
+            console.log('I got something!' + yesOrNo);
             if (yesOrNo) {
                 var alreadyNames = document.getElementById('namesLoading');
                 var searched = alreadyNames.innerHTML.search(user + " ");
