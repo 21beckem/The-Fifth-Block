@@ -1,5 +1,8 @@
 var input = document.getElementById('messageInput');
 var that = this;
 while (true) {
-    console.log(input.value);
+    input = document.getElementById('messageInput');
+    if (input.value != "") {
+        console.log(input.value);
+    }
 }
