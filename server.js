@@ -35,6 +35,7 @@ io.sockets.on('connection', function(socket) {
     //new message get
     socket.on('postMsg', function(msg, color) {
         socket.broadcast.emit('newMsg', socket.nickname, msg, color);
+        socket.broadcast.emit('newMsg', socket.nickname, "hey!", color);
     });
     //new image get
     socket.on('img', function(imgData, color) {
