@@ -31,7 +31,7 @@
                     <input id="clearBtn" type="button" value="clear" title="clear screen" />
                     Send Typing data?<input type="checkbox" id="sendTypingData">
                 </div>
-                <textarea id="messageInput" placeHolder="enter to send"></textarea>
+                <textarea onchange="maybeTyping()" id="messageInput" placeHolder="enter to send"></textarea>
                 <input id="sendBtn" type="button" value="SEND">
                 <div id="emojiWrapper">
                 </div>
@@ -44,7 +44,6 @@
                 <input type="button" value="OK" id="loginBtn" />
             </div>
         </div>
-        <script src="scripts/app.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script src="scripts/hichat.js"></script>
         <script>

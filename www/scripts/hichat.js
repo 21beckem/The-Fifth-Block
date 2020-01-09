@@ -5,6 +5,14 @@
  *view on GitHub:https://github.com/wayou/HiChat
  *see it in action:http://hichat.herokuapp.com/
  */
+function maybeTyping() {
+    input = document.getElementById('messageInput');
+    if (input.value != "") {
+        console.log('true');
+    } else {
+        console.log('false');
+    }
+}
 window.onload = function() {
     var hichat = new HiChat();
     hichat.init();
