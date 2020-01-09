@@ -41,6 +41,21 @@ HiChat.prototype = {
             that._displayNewMsg('system ', msg, 'red');
             document.getElementById('status').textContent = userCount + (userCount > 1 ? ' users' : ' user') + ' online';
         });
+        // typing or not
+        this.socket.on('typing', function(user, yesOrNo) {
+            if (yesOrNo) {
+                var alreadyNames = document.getElementById('namesLoading');
+                var searched = alreadyNames.innerHTML.search(user + " ");
+                if (searched == -1) {
+                    alreadyNames.innerHTML += '<strong class="loading">' + user + ' </strong>';
+                }
+            } else {
+                var alreadyNames = document.getElementById('namesLoading');
+                var toRemove = '<strong class="loading">' + name + ' </strong>';
+                alreadyNames.innerHTML = alreadyNames.innerHTML.replace(toRemove, "");
+            }
+        });
+        //
         this.socket.on('newMsg', function(user, msg, color) {
             that._displayNewMsg(user, msg, color);
         });

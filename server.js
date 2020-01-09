@@ -29,13 +29,21 @@ io.sockets.on('connection', function(socket) {
         if (socket.nickname != null) {
             //users.splice(socket.userIndex, 1);
             users.splice(users.indexOf(socket.nickname), 1);
+            socket.broadcast.emit('typing', socket.nickname, false);
             socket.broadcast.emit('system', socket.nickname, users.length, 'logout');
         }
+    });
+    //get typing start
+    socket.on('starttyping', function() {
+        socket.broadcast.emit('typing', socket.nickname, true);
+    });
+    //get typing stop
+    socket.on('stoptyping', function() {
+        socket.broadcast.emit('typing', socket.nickname, false);
     });
     //new message get
     socket.on('postMsg', function(msg, color) {
         socket.broadcast.emit('newMsg', socket.nickname, msg, color);
-        socket.broadcast.emit('newMsg', socket.nickname, "hey!", color);
     });
     //new image get
     socket.on('img', function(imgData, color) {
